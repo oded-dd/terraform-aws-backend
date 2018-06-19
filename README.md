@@ -1,4 +1,7 @@
- AWS Terraform Backend module
+# AWS Terraform Backend module
+
+[![Open Source Helpers](https://www.codetriage.com/oded-dd/terraform-aws-backend/badges/users.svg)](https://www.codetriage.com/oded-dd/terraform-aws-backend)
+
 Terraform module which creates [Terraform backend](https://www.terraform.io/docs/backends/types/s3.html) on AWS
 
 These types of resources are supported:
