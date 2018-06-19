@@ -11,7 +11,7 @@ These types of resources are supported:
 
 Root module calls these modules which can also be used separately to create independent resources:
 
-* [s3_bucket/](https://github.com/oded-dd/terraform-aws-backend/tree/master/modules/s3_bucket) - creates S3 bucket resource
+* [s3_bucket](https://github.com/oded-dd/terraform-aws-backend/tree/master/modules/s3_bucket) - creates S3 bucket resource
 * [dynamodb_table](https://github.com/oded-dd/terraform-aws-backend/tree/master/modules/dynamodb_table) - creates DynamoDB table resource
 
 ## Prerequisite
@@ -20,7 +20,7 @@ Root module calls these modules which can also be used separately to create inde
 ## Usage
 ```hcl
 module "terraform-backend" {
-  source = "https://github.com/oded-dd/terraform-aws-backend"
+  source = "github.com/oded-dd/terraform-aws-backend"
 
   identifier = "terraform-state-backend"
 
@@ -34,17 +34,16 @@ There is also a way to disable dynamoDB table and/or S3 bucket policy resource c
 
 ```hcl
 module "terraform-backend" {
-  source = "https://github.com/oded-dd/terraform-aws-backend"
+  source = "github.com/oded-dd/terraform-aws-backend"
 
   identifier = "terraform-state-backend"
+
   create_dynamodb_table = false
   create_backend_policy = false
 
   # ... omitted
 }
 ```
-
-## Examples
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
@@ -75,9 +74,9 @@ module "terraform-backend" {
 
 | Name | Description |
 |------|-------------|
+| this_dynamodb_table_arn | The arn of the table |
+| this_dynamodb_table_id | The name of the table |
 | this_s3_bucket_arn | The ARN of the bucket. Will be of format arn:aws:s3:::bucketname |
-| this_s3_bucket_arn | The ARN of the bucket. Will be of format arn:aws:s3:::bucketname |
-| this_s3_bucket_id | The name of the bucket |
 | this_s3_bucket_id | The name of the bucket |
 | this_s3_bucket_region | The AWS region this bucket resides in |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
