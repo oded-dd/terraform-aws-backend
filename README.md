@@ -39,11 +39,26 @@ module "terraform-backend" {
   identifier = "terraform-state-backend"
 
   create_dynamodb_table = false
-  create_backend_policy = false
 
   # ... omitted
 }
 ```
+
+```hcl
+module "terraform-backend" {
+  source = "github.com/oded-dd/terraform-aws-backend"
+
+  identifier = "terraform-state-backend"
+
+  create_backend_policy = true
+
+  # ... omitted
+}
+```
+####  Notes:
+* Principal is optional and by default is set to `Public`
+* Principal `CanonicalUser` is not supported
+* Policy `conditions` are not supported
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs

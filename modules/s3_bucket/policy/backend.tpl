@@ -9,7 +9,9 @@
             ],
             "Effect": "Allow",
             "Resource": "${arn}",
-            "Principal": "${principal}"
+            "Principal": {
+              "AWS" : [ "${principal}" ]
+            }
         },
         {
             "Sid": "StmtObject",
@@ -19,7 +21,9 @@
             ],
             "Effect": "Allow",
             "Resource": "${arn}/*",
-            "Principal": "${principal}"
+            "Principal": {
+              "AWS": [ "${principal}" ]
+            }
         }
     ]
 }
